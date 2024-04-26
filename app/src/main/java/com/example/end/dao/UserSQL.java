@@ -10,7 +10,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import com.example.end.model.User;
+import com.example.end.bean.User;
 
 import java.util.ArrayList;
 

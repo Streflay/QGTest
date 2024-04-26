@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.example.end.dao.DateBaseHelper;
 import com.example.end.dao.UserSQL;
 import com.example.end.dao.WordSQl;
-import com.example.end.model.User;
+import com.example.end.bean.User;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnFocusChangeListener {
 

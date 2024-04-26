@@ -10,7 +10,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import com.example.end.model.Word;
+import com.example.end.bean.Word;
 
 import java.util.ArrayList;
 

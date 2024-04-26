@@ -1,4 +1,4 @@
-package com.example.end.model;
+package com.example.end.bean;
 
 public class Word {
     //原语言

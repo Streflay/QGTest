@@ -1,13 +1,14 @@
 package com.example.end.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.end.R;
 import com.example.end.dao.WordSQl;
-import com.example.end.model.Word;
+import com.example.end.bean.Word;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,7 @@ public class Fragment_Resite extends Fragment {
     Context context;
     private List<Word> words;
     WordSQl wordSQl;
+
 
     public class Adapter_Resite extends RecyclerView.Adapter <Adapter_Resite.ViewHolder> {
 
@@ -97,6 +99,11 @@ public class Fragment_Resite extends Fragment {
         list.setLayoutManager(layoutManager);
         wordSQl=new WordSQl(context);
         words=getWords();
+        ArrayList<String> data = new ArrayList<>();
+        for (Word word : words) {
+            data.add(word.getSrc());
+        }
+        Button btn=view.findViewById(R.id.start_search);
         if (words!=null){
             Adapter_Resite resite=new Adapter_Resite(words);
             list.setAdapter(resite);
@@ -109,6 +116,17 @@ public class Fragment_Resite extends Fragment {
                 }
             });
         }
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent() ;
+                intent.setClass(context,Search.class);
+                Bundle bundle = new Bundle();
+                bundle.putStringArrayList("key",data);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
@@ -119,8 +137,6 @@ public class Fragment_Resite extends Fragment {
         wordSQl.close();
         return words1;
     }
-
-
 
 
 }

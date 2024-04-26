@@ -45,7 +45,6 @@
     </RelativeLayout>
 
 
-
     <View
         android:paddingTop="10dp"
         android:layout_width="300dp"

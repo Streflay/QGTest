@@ -11,9 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.end.dao.UserSQL;
-import com.example.end.model.User;
+import com.example.end.bean.User;
 
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

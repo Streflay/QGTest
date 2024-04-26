@@ -10,8 +10,6 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.example.end.model.User;
-
 public class DateBaseHelper extends SQLiteOpenHelper {
 
     private SQLiteDatabase db;

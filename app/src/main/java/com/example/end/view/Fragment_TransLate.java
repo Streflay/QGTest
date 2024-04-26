@@ -5,8 +5,6 @@ import static android.content.Context.CLIPBOARD_SERVICE;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -26,18 +24,14 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.end.Dictionary;
 import com.example.end.R;
 import com.example.end.dao.WordSQl;
-import com.example.end.model.Word;
+import com.example.end.bean.Word;
 import com.example.end.util.TranslateResult;
 import com.google.gson.Gson;
-
-import org.angmarch.views.NiceSpinner;
-import org.angmarch.views.OnSpinnerItemSelectedListener;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -107,7 +101,7 @@ public class Fragment_TransLate extends Fragment implements View.OnClickListener
 
 
     private void initView() {
-        //设置亮色状态栏模式 systemUiVisibility在Android11中弃用了，可以尝试一下。
+        //设置亮色状态栏模式
         getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         beforeLay=view.findViewById(R.id.before_lay);
         Language=view.findViewById(R.id.sp_language);

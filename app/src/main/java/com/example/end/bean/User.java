@@ -1,6 +1,6 @@
-package com.example.end.model;
+package com.example.end.bean;
 
-public class User {
+public class User implements Comparable<User>{
     int id;
     String tel;
     String passWord;
@@ -46,5 +46,10 @@ public class User {
 
     public void setRem(String rem) {
         this.rem = rem;
+    }
+
+    @Override
+    public int compareTo(User user) {
+        return this.id-user.id;
     }
 }
